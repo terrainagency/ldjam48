@@ -1,6 +1,6 @@
 # LDJAM48
 LDJAM48 Entry
 
-Andy - Game Design
+Andy - Gameplay
 
 Tony - Assets
