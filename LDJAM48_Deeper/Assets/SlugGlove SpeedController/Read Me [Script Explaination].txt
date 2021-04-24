@@ -1,0 +1,99 @@
+
+Player Movement Script
+
+ MaxSpeed = how fast we run forward
+SpeedClamp = how fast we can possibly be
+InAirControl = how much control you have over your movement direction when in air
+
+ Acceleration = how fast we build speed
+ Decceleration = how fast we slow down
+DirectionControl = how much control we have over changing direction
+Stickyness = how much we stick to the ground (for use on slopes
+
+
+MaxSlopeAmt = the max  slope that will influence our player
+ MinSlopeAmt = the smallest slope that will influence our player
+SlopeSpeedGain = the max speed we can add to our controllerSlopeSpeedLoss = the min speed we can add to our controller
+
+SpeedNeededToCheck = how fast we must be going to check distance
+     TimeBtwSpeedChecks = how frequently we check for distance between positions
+    private float SpeedCheckTime = actual timer
+     DistanceNeeded = the distance needed for are player to move
+
+     TurnSpeed = how fast we turn when on the ground
+     TurnSpeedInAir = how fast we turn when in air
+     TurnSpeedSliding = how fast we are when sliding
+     TurnSpeedOnWalls = how fast we are when running on a wall
+
+
+
+     MaxSpeedBoostOnJump
+     JumpHeight = how high we jump
+
+     BackFlipHeight = how high a backflip is
+     BackFlipBackwards = how far backwards we go on backflip
+
+     LeapHeight = how high up our leap is
+     LeapForwards = for far forwards our leep is
+
+     JumpHoldAmt = how much holding jump adds to a jump 
+     JumpHoldTime = how long we can hold jump for
+     fallMultiplier = 2.5f = multiplier to falling 
+     lowJumpMultiplier = 2f = multiplier to begining of jump
+
+     SpeedBeforeWallRun = how fast we must be before wall running
+     WallRunTime = how long we can run on walls
+     TimeBeforeWallRun = how long we have to be in the air before we can wallrun
+     WallRunUpwardsMovement = how much we move up a wall when running on it (make this 0 to just slightly move down a wall we run on
+     WallRunSpeedAcceleration = how quickly we build speed to run up walls
+
+     CrouchSpeed = how fast we move when crouching
+
+     SlideAmt = how far we slide when pressing crouch
+     SlideSpeedLimit = how fast we have to be traveling before a crouch will stop
+     SpeedBeforeSlide = how fast we are going before we can slide
+     SlideTime = how long we can slide for
+
+     PullUpTime = the time it takes to pull onto a ledge
+
+     TimeBtwRespawn
+    private float RespawnTimer
+
+Player Collision Script
+The red line in the inspector displays the distace from the ground, to check the angle of the floor
+The red sphere will display the check for ground below our player
+the green line will display the check for walls we can run on
+the blue line displays the position and distance we check for a ledge to grab on to
+
+   FloorSize= how large the floor check is
+     FloorDis= how large the detection for the floors is
+     bottomOffset= offset from player centre
+     WallCheckDistance= how large the detection for the walls is
+     UpOffset= offset from the players centre 
+
+     LedgeGrabForwardPos= the position in front of the player where we check for ledges
+     LedgeGrabUpwardsPos= the position in above of the player where we check for ledges
+     LedgeGrabDistance= the distance the ledge can be from our raycast before we grab it (this is projects from the top of the wall grab position, downwards
+
+    public LayerMask FloorLayers= what layers we can stand on
+    public LayerMask WallLayers  = what layers we can wall run on
+    public LayerMask LedgeGrabLayers= what layers we will grab onto
+
+
+camera control
+FollowSpd = how fast we follow the player
+ MouseSpeed = how sensetive our mouse movements are
+    ControllerSpeed = how sensetive our controller movements are
+
+    LookLeftRightSpeed = how fast we look left and right
+    LookUpSpeed = how fast we look up and down
+
+    NormalPos = the normal position and angle the players camera will be at
+    HighPos = the highest position our camera will move to when looking down
+    LowPos = the lowest postion our camera will move to when looking up
+
+    Smoothing = smoothing to apply to our cameras movements
+
+    MaxFov = when moving at a high speed our cameras FOV will increase, this is the highest amount it will reach
+    FOVSpeed = how fast we must go before we reach max fov
+    FovMinSpeed = how slow we will be before the fov will change (at 10 the player must reach a speed of 10 to change the fov
